@@ -8,14 +8,16 @@ import Nav from './components/Nav/Nav';
 // styles
 import { Container } from './appStyles.js';
 // Personal Key, it would be hidden for you. Get One!
-import API_KEY from './key';
+// import API_KEY from './key';
+
 
 function App() {
+  console.log(process.env.REACT_APP_API_KEY);
   const [videos, setVideos] = useState(null),
     [selectedVideo, setSelectVideo] = useState();
 
   const handleSearch = term =>
-    YTSearch({ key: API_KEY, term }, videos => {
+    YTSearch({ key: process.env.REACT_APP_API_KEY, term }, videos => {
       setVideos(videos);
       setSelectVideo(videos[0]);
     });

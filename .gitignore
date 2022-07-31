@@ -8,7 +8,8 @@
 
 # production
 /build
-src/key.js
+/.env
+
 youtube-clone.gif
 
 # misc
